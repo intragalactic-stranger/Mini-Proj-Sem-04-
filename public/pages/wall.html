@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gstians Vault</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="wall.css" />
+
+  <style>
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f6f6f6;
+      min-width: 230px;
+      border: 1px solid #ddd;
+      z-index: 1;
+    }
+
+    .show{
+      display: block;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div>
+    <h3>Gstians' Vault</h3>
+    <input type="text" placeholder="Search ... " />
+  </div>
+  <button onclick="window.location.reload()">Refresh</button>
+  <a href="/">Home</a>
+  <a href="/submit">Add new project</a>
+
+  <div class="table">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Project Title</th>
+          <th>Project domain
+            <div class="dropdown" id="myBtnContainer">
+              <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+              <div id="myDropdown" class="dropdown-content container">
+                <!-- <div>Hardware</div>
+                  <div>Software</div> -->
+                <button class="filterDiv" onclick="filterFunction('Software')">Software</button>
+                <button onclick="filterFunction('Hardware')">Hardware</button>
+              </div>
+            </div>
+          </th>
+          <th>Student PRN</th>
+          <th>Student Name</th>
+          <th>Category</th>
+          <th>Year</th>
+          <th>Description</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="filter.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="wall.js"></script>
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction(input) {
+      let query = input;
+      let filter = query.value.toLowerCase();
+      let table = document.getElementById("table");
+      let tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        let td1 = tr[i].getElementsByTagName("td")[1];
+        if (td1) {
+          if (td1.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+      //   txtValue = tr[i].textContent || tr[i].innerText;
+      //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      //     tr[i].style.display = "";
+      //   } else {
+      //     tr[i].style.display = "none";
+      //   }
+      // }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gstians' Vault</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="submit.css" />
+  </head>
+  <body>
+    <h3>Adding a new project</h3>
+    <form method="post">
+      <div class="first-div">
+        <input
+          type="text"
+          placeholder="Project Title"
+          title="Project Title"
+          class="driver-name"
+        />
+        <input
+          type="text"
+          placeholder="Project domain"
+          title="Project domain"
+          class="driver-age"
+        />
+        <input type="text" placeholder="Student PRN" title="Student PRN" class="car" />
+      </div>
+      <div class="second-div">
+        <input
+          type="text"
+          placeholder="Student Name"
+          title="Student Name"
+          class="rto"
+        />
+        <input
+          type="text"
+          placeholder="Category"
+          title="Category"
+          class="vehicle-class"
+        />
+      </div>
+      <div class="third-div">
+        <input
+          type="text"
+          placeholder="Year"
+          title="Year"
+          class="section-start"
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          title="Description"
+          class="section-end"
+        />
+        <input
+          type="text"
+          placeholder="Date"
+          title="Date"
+          class="time"
+        />
+      </div>
+      <button type="submit">Submit</button>
+      <a class="wall-button" href="wall" style="display: none"
+        >View Projects</a
+      >
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="submit.js"></script>
+    </form>
+  </body>
+</html>

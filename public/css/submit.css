@@ -1,0 +1,66 @@
+body {
+  padding: 2em;
+}
+
+h3 {
+  font-size: 2em;
+  color: #333;
+}
+form {
+  display: grid;
+  gap: 1em;
+  margin-top: 2em;
+}
+input {
+  padding: 10px;
+}
+div {
+  display: flex;
+  gap: 1em;
+}
+.first-div input {
+  width: 33%;
+  display: inline;
+}
+.second-div input {
+  width: 50%;
+  display: inline;
+}
+.third-div {
+  display: grid;
+  grid-template-columns: 2fr 2fr 0.5fr;
+}
+button,
+a {
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: none;
+  position: relative;
+  background-color: #333;
+  color: #eee;
+  display: grid;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  div {
+    display: grid;
+    gap: 1em;
+  }
+  .first-div input,
+  .second-div input,
+  .third-div input {
+    width: 100%;
+  }
+  .third-div {
+    grid-template-columns: 1fr;
+  }
+  button {
+    width: 100%;
+  }
+}

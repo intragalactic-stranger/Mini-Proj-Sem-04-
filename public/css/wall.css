@@ -1,0 +1,83 @@
+body {
+  padding: 2em;
+}
+div {
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  justify-content: space-between;
+}
+input {
+  color: #333;
+  padding: 5px;
+  width: 25%;
+}
+h3 {
+  font-size: 2em;
+  color: #333;
+}
+.table {
+  margin-top: 2em;
+  white-space: normal;
+  overflow-x: auto;
+  display: flex;
+  position: relative;
+  min-height: 70vh;
+}
+.mobile {
+  display: none;
+}
+table {
+  position: absolute;
+  top: 0;
+  border: 1px solid #333;
+  border-collapse: collapse;
+  width: 100%;
+}
+table * {
+  color: #333;
+}
+table td,
+table th {
+  text-align: left;
+  padding: 10px;
+}
+table td {
+  border: 1px solid #333;
+}
+table th {
+  border: 1px solid #eee;
+}
+thead * {
+  background-color: #333;
+  color: #eee !important;
+}
+table tbody tr:nth-child(even) {
+  background-color: rgb(233, 233, 233);
+}
+button,
+a {
+  font-size: 1.2em;
+  padding: 5px;
+  border: none;
+  color: #eee;
+  background-color: #333;
+  margin-top: 2em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .table {
+    min-height: 50vh;
+    display: grid;
+  }
+  input {
+    display: none;
+  }
+  table {
+    display: none;
+  }
+  .mobile {
+    display: initial;
+  }
+}
